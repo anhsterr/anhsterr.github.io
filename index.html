@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Portfolio</title>
+    <meta
+      name="description"
+      content="AI engineer/researcher portfolio with projects, publications, timeline, and education."
+    />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-elevated="false">
+      <div class="container nav">
+        <a class="brand" href="#about" aria-label="Go to top">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span class="brand__text" id="brandName">Anh Nguyen</span>
+        </a>
+
+        <nav class="nav__links" aria-label="Primary">
+          <a class="nav__link" href="#about" data-nav="about">About</a>
+          <a class="nav__link" href="#timeline" data-nav="timeline">Timeline</a>
+          <a class="nav__link" href="#education" data-nav="education">Education</a>
+          <a class="nav__link" href="#publications" data-nav="publications">Publications</a>
+          <a class="nav__link" href="#projects" data-nav="projects">Projects</a>
+          <a class="nav__link" href="#contact" data-nav="contact">Contact</a>
+        </nav>
+
+        <div class="nav__actions">
+          <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">
+            <span class="icon-btn__icon" aria-hidden="true">◐</span>
+          </button>
+          <button class="icon-btn nav__menu-btn" id="menuBtn" type="button" aria-label="Open menu">
+            <span class="icon-btn__icon" aria-hidden="true">☰</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu" hidden>
+        <div class="container mobile-menu__inner">
+          <a class="mobile-menu__link" href="#about">About</a>
+          <a class="mobile-menu__link" href="#timeline">Timeline</a>
+          <a class="mobile-menu__link" href="#education">Education</a>
+          <a class="mobile-menu__link" href="#publications">Publications</a>
+          <a class="mobile-menu__link" href="#projects">Projects</a>
+          <a class="mobile-menu__link" href="#contact">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="main">
+      <section class="hero section" id="about" aria-label="Self introduction">
+        <div class="container hero__grid">
+          <div class="hero__avatarCol">
+            <div class="hero__avatarWrap" aria-hidden="false">
+              <img
+                class="hero__avatarImg hero__avatarImg--hero"
+                src="./profile.JPG"
+                alt="Profile picture of Anh Nguyen"
+              />
+            </div>
+          </div>
+
+          <div class="hero__copy">
+            <div class="pill" id="subtitlePill">AI Researcher</div>
+            <h1 class="hero__title" id="heroTitle">AI Engineer / Researcher</h1>
+            <p class="hero__lead" id="heroIntro">
+              I am an AI engineer/researcher with 5+ years of experience in computer vision research.
+              I work on modern perception systems (e.g., image-to-image translation, representation learning,
+              and robustness-focused evaluation), and I enjoy turning research ideas into reliable engineering:
+              clean data pipelines, reproducible training, and measurable improvements in real deployments.
+            </p>
+            <!-- <div class="hero__cta">
+              <a class="btn btn--primary" href="#projects">Explore Projects</a>
+              <a class="btn btn--ghost" href="#publications">Read Publications</a>
+            </div> -->
+
+            <div class="hero__meta" role="list" aria-label="Highlights">
+              <div class="meta-card" role="listitem">
+                <div class="meta-card__k" id="metaRole">Focus</div>
+                <div class="meta-card__v" id="metaFocus">Deep Learning, Computer Vision</div>
+              </div>
+              <div class="meta-card" role="listitem">
+                <div class="meta-card__k" id="metaLocation">Location</div>
+                <div class="meta-card__v" id="metaWorkMode">Seoul, South Korea</div>
+              </div>
+              <div class="meta-card" role="listitem">
+                <div class="meta-card__k" id="metaStatus">Status</div>
+                <div class="meta-card__v" id="metaJob">Looking for AI engineer/researcher roles</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="timeline" aria-label="Timeline">
+        <div class="container">
+          <div class="sectionHead">
+            <h2 class="sectionTitle">Timeline</h2>
+            <!-- <p class="sectionSub">A quick view of milestones across research and engineering.</p> -->
+          </div>
+          <div class="timeline" id="timelineList"></div>
+        </div>
+      </section>
+
+      <section class="section" id="education" aria-label="Education">
+        <div class="container">
+          <div class="sectionHead">
+            <h2 class="sectionTitle">Education</h2>
+            <!-- <p class="sectionSub">Degrees, training, and academic highlights.</p> -->
+          </div>
+          <div class="grid-2" id="educationList"></div>
+        </div>
+      </section>
+
+      <section class="section" id="publications" aria-label="Publications">
+        <div class="container">
+          <div class="sectionHead">
+            <h2 class="sectionTitle">Publications</h2>
+            <!-- <p class="sectionSub">Selected papers, preprints, and talks.</p> -->
+          </div>
+          <div class="list" id="publicationsList"></div>
+        </div>
+      </section>
+
+      <section class="section" id="projects" aria-label="Projects">
+        <div class="container">
+          <div class="sectionHead">
+            <h2 class="sectionTitle">Projects</h2>
+            <!-- <p class="sectionSub">Card-style project overview with thumbnails and descriptions.</p> -->
+          </div>
+          <div class="projectGrid" id="projectsGrid"></div>
+        </div>
+      </section>
+
+      <section class="section section--tight" id="contact" aria-label="Contact">
+        <div class="container">
+          <div class="ctaBanner">
+            <div class="ctaBanner__copy">
+              <div class="pill pill--soft" id="contactPill">Available for AI engineer/researcher roles</div>
+              <h2 class="ctaBanner__title">Let’s build something impactful.</h2>
+              <p class="ctaBanner__lead" id="contactText">
+                Reach out for collaborations, research roles, or engineering opportunities.
+              </p>
+              <div class="ctaBanner__actions" id="contactActions"></div>
+            </div>
+            <div class="ctaBanner__right" aria-hidden="true">
+              <div class="contactCard">
+                <div class="contactCard__k">Email</div>
+                <div class="contactCard__v" id="contactEmail">you@example.com</div>
+                <div class="contactCard__hint" id="contactHint">Typical response: within 1-2 days</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__left">
+          <div class="muted" id="footerName">Anh Nguyen</div>
+          <div class="muted">AI engineer/researcher portfolio</div>
+        </div>
+        <div class="footer__right">
+          <a class="footerLink" href="#about">Back to top</a>
+        </div>
+      </div>
+    </footer>
+
+    <noscript>You need JavaScript enabled to render the content from <code>data.js</code>.</noscript>
+    <script src="./data.js"></script>
+    <script src="./scripts.js" defer></script>
+  </body>
+</html>
+
