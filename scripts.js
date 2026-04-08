@@ -143,16 +143,17 @@ function renderProjects(items) {
   const root = document.getElementById("projectsGrid");
   if (!root) return;
   root.innerHTML = "";
-  (items || []).forEach((p) => {
+  const thumbSrcs = ["./assets/1.gif", "./assets/2.png", "./assets/3.png"];
+  (items || []).forEach((p, i) => {
     const card = document.createElement("article");
     card.className = "projectCard";
 
-    const thumb = makeThumb(p.thumbnail || {});
     const tagsHtml = (p.tags || []).map((t) => `<span class="tag">${t}</span>`).join("");
+    const thumbSrc = thumbSrcs[i] ?? thumbSrcs[0];
 
     card.innerHTML = `
       <div class="projectCard__thumb">
-        <img src="${thumb}" alt="Thumbnail for ${p.name ?? "project"}" />
+        <img src="${thumbSrc}" alt="Thumbnail for ${p.name ?? "project"}" />
       </div>
       <div class="projectCard__body">
         <div class="projectCard__name">${p.name ?? ""}</div>
@@ -194,8 +195,8 @@ function setupThemeToggle() {
   } else if (stored === "dark") {
     document.documentElement.setAttribute("data-theme", "dark");
   } else {
-    // Default: light mode.
-    document.documentElement.setAttribute("data-theme", "light");
+    // Default: dark mode.
+    document.documentElement.setAttribute("data-theme", "dark");
   }
 
   const applyIcon = () => {
