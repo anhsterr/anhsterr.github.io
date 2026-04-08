@@ -107,12 +107,12 @@ window.portfolioData = {
       links: [{ label: "Case Study", href: "#" }],
     },
     {
-      name: "OCR-based scoreboard reader for Esports leaderboard",
+      name: "Industrial Anomaly Detection using Ensembled Machine Learning",
       description:
-        "Methods to improve generalization under annotation noise, including diagnostics and controlled experiments.",
-      tags: ["Training", "Robustness", "Experiments"],
+        "A framework for anomaly detection in industrial settings using ensembled machine learning models.",
+      tags: ["Anomaly Detection", "Machine Learning", "Industrial"],
       thumbnail: { a: "#f59e0b", b: "#7c3aed", label: "Robust" },
-      links: [{ label: "Paper", href: "#" }],
+      links: [{ label: "Github", href: "#" }],
     },
     // {
     //   name: "Multimodal Retrieval Demo",
